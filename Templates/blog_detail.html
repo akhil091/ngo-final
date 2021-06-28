@@ -1,0 +1,174 @@
+
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Stories</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">{{ obj.Title }}</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="single-post">
+              <div class="sp-thumbnail">
+                <img src="{{ obj.Featured_Image.url }}" alt="sp-thumbnail" class="img-fluid">
+                <div class="pb-date">
+                  <div class="pb-box">
+                    <span class="day">{{ obj.Date|date:"d" }}</span>
+                    <span class="month">{{ obj.Date|date:"M" }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-meta">
+                <div class="pb-author">
+                  <i class="icon-circle-user"></i>by Admin
+                </div>
+                <!-- {% comment %} <div class="pb-comment">
+                  <i class="icon-comments"></i>2 Comments
+                </div> {% endcomment %} -->
+              </div>
+                <div class="sp-content">
+                  <p>{{ obj.Text|safe }}</p>
+                </div>
+
+              <div class="sp-tags-share">
+                <div class="row align-items-center">
+                  <div class="col-md-6 mb-xs-30">
+                    <div class="sp-tags">
+                      <h6 class="tags-title">Share on:</h6>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="social-media-list float-md-end">
+                      <ul>
+                        <li><a href="#"><i class="icon-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="icon-instagram"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment-block">
+                <h2 class="comments-title">Comments</h2>
+                <ol class="comment-list">
+                  <li class="comment-list-item">
+                    <div class="commment-inner stand_comment">
+                      <div class="comment-details">
+                        <div class="cmr-block">
+                          <div class="commentor-meta">
+                            <div class="commentor-name"><a href="#">David Marks</a></div>
+                            <div class="comment-date">3 hours ago</div>
+                          </div>
+                        </div>
+                        <div class="comment-content">
+                          Cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum lightly believable.
+                          If you are going to use a of you need to be sure there isn't anything embarrassing.
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+                <div class="comment-form-box">
+                  <div class="comment-respond">
+                    <h3 class="comment-reply-title">Leave a Comment</h3>
+                    <form action="#" class="comment-form">
+                      <div class="cf-group">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <input type="text" name="name" id="name" placeholder="Your name">
+                          </div>
+                          <div class="col-md-6">
+                            <input type="email" name="email" id="email" placeholder="Email address">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cf-group">
+                        <textarea name="comment" id="comment" cols="30" rows="4" class="cf-message"
+                          placeholder="Write a comment"></textarea>
+                      </div>
+                      <div class="cf-group">
+                        <button class="theme-btn cs-btn">Submit Comment</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <aside class="wp-sidebar">
+              <div class="widget-box">
+                <h3 class="widget-title">Recent Stories</h3>
+                <div class="rp-widget">
+                  <div class="rp-item">
+                    <div class="rp-thumb">
+                      <img src="assets/img/rp-1.jpg" alt="lp-thumb" class="img-fluid">
+                    </div>
+                    <div class="rp-details">
+                      <div class="rp-author"><i class="icon-circle-user aut-icon"></i> by Admin</div>
+                      <h4 class="rp-title"><a href="single.html">Learn how access to
+                          clean the water</a></h4>
+                    </div>
+                  </div>
+                  <div class="rp-item">
+                    <div class="rp-thumb">
+                      <img src="assets/img/rp-thumb-1.jpg" alt="lp-thumb" class="img-fluid">
+                    </div>
+                    <div class="rp-details">
+                      <div class="rp-author"><i class="icon-circle-user aut-icon"></i> by Admin</div>
+                      <h4 class="rp-title"><a href="single.html">Learn how access to
+                          clean the water</a></h4>
+                    </div>
+                  </div>
+                  <div class="rp-item">
+                    <div class="rp-thumb">
+                      <img src="assets/img/rp-thumb-2.jpg" alt="lp-thumb" class="img-fluid">
+                    </div>
+                    <div class="rp-details">
+                      <div class="rp-author"><i class="icon-circle-user aut-icon"></i> by Admin</div>
+                      <h4 class="rp-title"><a href="single.html">Learn how access to
+                          clean the water</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="widget-box widget_categories">
+                <h3 class="widget-title">Categories</h3>
+                <ul>
+                  <li><a href="#">Charity</a></li>
+                  <li><a href="#">Fundrising</a></li>
+                  <li><a href="#">Donations</a></li>
+                  <li><a href="#">Save Lifes</a></li>
+                  <li><a href="#">Health</a></li>
+                  <li><a href="#">Education</a></li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+{% endblock content %}

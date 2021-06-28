@@ -1,0 +1,58 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Campaigns</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Campaigns</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+
+
+    <section class="pb-90 pt-120">
+      <div class="container">
+        <div class="row">
+
+        {% for camp in obj %}
+
+          {% if camp.Type == "Campaign" %}
+
+            <div class="col-md-6 col-lg-4 mb-30">
+
+              <div class="cause-grid">
+                <figure class="cause-img">
+                  <img src={{ camp.Image.url }} alt="" class="img-fluid">
+                </figure>
+
+                <div class="cause-grid-con">
+                  <div class="cause-grid-inner">
+                    <h3 class="cause-grid-title"><a href="{% url 'programme_campaign' camp.id %}">{{ camp.Name }}</a></h3>
+                    <p class="cause-grid-des">{{ camp.Short_Detail }}</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,108 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cause</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">{{ obj.Name }}</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="cause-content">
+              <div class="cause-summary">
+                <div class="cause-thumbnail">
+                  <img src={{ obj.Image.url }} alt="cause-thumbnail" class="img-fluid">
+                </div>
+
+              </div>
+              <h2 class="cause-title">{{ obj.Name }}</h2>
+              {{ obj.Full_Detail|safe }}
+
+            </div>
+            <div class="row pt-20">
+              <div class="col-md-6 mb-xs-30">
+                <img src="{% static 'assets/img/cause-details.jpg' %}" alt="cause-details" class="img-fluid">
+              </div>
+              <div class="col-md-6">
+                <h3>More Details</h3>
+                <div class="advanced-list">
+                  <ul>
+                    <li><i class="icon-check-circle al-icon"></i> Making this first true generator</li>
+                    <li><i class="icon-check-circle al-icon"></i> Many desktop publish packages</li>
+                    <li><i class="icon-check-circle al-icon"></i> Lorem Ipsum is not simply</li>
+                    <li><i class="icon-check-circle al-icon"></i> If you are going to passage</li>
+                    <li><i class="icon-check-circle al-icon"></i> It has roots in a piece</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="cause-download">
+              <div class="cd-title"><span class="cd-icon"><i class="icon-checked-1"></i></span>Our Presentation</div>
+              <div class="cd-btn">
+                <a href="#" class="theme-btn white-btn">Download</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <!-- <div class="widget-box widget-author">
+              <div class="author-image">
+                <img src="assets/img/author.jpg" alt="author" class="img-fluid">
+              </div>
+              <h4 class="author-name">Aleesha Brown</h4>
+              <div class="author-desc">It uses a dictionary of over lorem ipsum simply free text latin words,</div>
+            </div> -->
+            <!-- <div class="widget-box doner-widget">
+              <h3 class="widget-title">Recent Campaigns</h3>
+              <div class="doner-list">
+                <div class="doner-item">
+                  <div class="doner-image">
+                    <img src="assets/img/doner-photo.jpg" alt="doner-photo" class="img-fluid">
+                  </div>
+                  <div class="doner-details">
+                    <span class="donate-amount">$20</span>
+                    <div class="donar-name">David Marks <span class="donated-time">3 hours ago</span></div>
+                    <div class="donar-comment">God bless you dear</div>
+                  </div>
+                </div>
+                <div class="doner-item">
+                  <div class="doner-image">
+                    <img src="assets/img/donar-2.jpg" alt="doner-photo" class="img-fluid">
+                  </div>
+                  <div class="doner-details">
+                    <span class="donate-amount">$20</span>
+                    <div class="donar-name">David Marks <span class="donated-time">3 hours ago</span></div>
+                    <div class="donar-comment">God bless you dear</div>
+                  </div>
+                </div>
+                <div class="doner-item">
+                  <div class="doner-image">
+                    <img src="assets/img/donar-3.jpg" alt="doner-photo" class="img-fluid">
+                  </div>
+                  <div class="doner-details">
+                    <span class="donate-amount">$20</span>
+                    <div class="donar-name">David Marks <span class="donated-time">3 hours ago</span></div>
+                    <div class="donar-comment">God bless you dear</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,108 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Contact Us</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-block">
+              <div class="contact-details">
+                <div class="row align-items-center">
+                  <div class="col-lg-3 col-md-6 mb-xs-30">
+                    <h3 class="cond-title">Get in Touch</h3>
+                  </div>
+                  <div class="col-lg-3 col-md-6 ct-border mb-xs-30">
+                    <div class="contact-item d-flex align-items-center">
+                      <div class="hc-icon">
+                        <i class="icon-phone-ringing"></i>
+                      </div>
+                      <div class="hc-details">
+                        <span class="hc-heading">Call Anytime</span>
+                        <span class="hc-content"><a href="tel:+">666 888 0000</a></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-xs-30">
+                    <div class="contact-item d-flex align-items-center ps-lg-4">
+                      <div class="hc-icon">
+                        <i class="icon-email"></i>
+                      </div>
+                      <div class="hc-details">
+                        <span class="hc-heading">Write Email</span>
+                        <span class="hc-content"><a href="mailto:.com">info@company.com</a></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="social-media-list ">
+                      <ul>
+                        <li><a href="#"><i class="icon-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="icon-instagram"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-120">
+          <div class="col-sm-12 text-center">
+            <span class="sec-tagline">Ask Anything</span>
+            <h2 class="sec-title">Send a Message</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <form action="#" class="contact-page-form">
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <input type="text" class="form-input" placeholder="Your name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-input" placeholder="Email address">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <textarea name="message" id="message" cols="30" rows="4" class="message-input"
+                    placeholder="Write a comment"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <button class="theme-btn ms-btn">Send a Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <div class="map-outer">
+      <div class="map-canvas" data-zoom="16" data-lat="-37.817136" data-lng="144.955772" data-type="roadmap"
+        data-hue="#0e76bc" data-icon-path="assets/img/map-marker.png" data-title="Perits Office."
+        data-content="121 King Street, Melbourne, Victoria-3000, Australia">
+      </div>
+    </div>
+
+{% endblock content %}

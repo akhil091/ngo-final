@@ -1,0 +1,64 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Stories</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Latest Stories</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+
+
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="news-grids">
+              <div class="row">
+
+              {% for blog in obj %}
+                <div class="col-md-4">
+                  <div class="post-block">
+                    <div class="pb-thumb">
+                      <img src={{ blog.Featured_Image.url }} alt="post image" class="img-fluid">
+                      <div class="pb-date">
+                        <div class="pb-box">
+                          <span class="day">{{ blog.Date|date:"d" }}</span>
+                          <span class="month">{{ blog.Date|date:"M" }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pb-content">
+                      <h2 class="pb-title"><a href="{% url 'blog_detail' blog.id %}">{{ blog.Title }}</a></h2>
+                      <div class="pb-meta">
+                        <div class="pb-author">
+                          <i class="icon-circle-user"></i>by Admin
+                        </div>
+                        {% comment %} <div class="pb-comment">
+                          <i class="icon-comments"></i>2 Comments
+                        </div> {% endcomment %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Fundraiser</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">{{ obj.Name }}</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="cause-content">
+              <div class="cause-summary">
+                <div class="cause-thumbnail">
+                  <img src={{ obj.Image.url }} alt="cause-thumbnail" class="img-fluid">
+                </div>
+                <div class="cause-box">
+                  <div class="row align-items-center">
+                    <div class="cause-box-inner col-md-9 mb-xs-30">
+                      <div class="bar-line">
+                        <div class="bar-line-active" data-percent="{{obj.get_percent}}%">
+                          <span>{{obj.get_percent}}%</span>
+                        </div>
+                      </div>
+                      <div class="db-meta">
+                        <div class="db-raised"><span>Rs. {{ obj.Raised_till_now }}</span> Raised</div>
+                        <div class="db-goal"><span>{{ obj.Money_to_raise }}</span> Goal</div>
+                      </div>
+                    </div>
+                    <div class="cd-btn col-md-3">
+                      <a href="#" class="theme-btn float-md-end">Donate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="cause-title">{{ obj.Name }}</h2>
+              {{ obj.Full_Detail|safe }}
+
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

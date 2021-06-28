@@ -1,0 +1,51 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+    <section class="page-hero" data-background="assets/img/page-hero.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav aria-label="breadcrumb" class="header-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Volunteers</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Volunteers</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End page hero  -->
+    <section class="pb-90 pt-120">
+      <div class="container">
+        <div class="row">
+
+        {% for vol in obj %}
+          <div class="col-md-4">
+            <div class="team-block">
+              <div class="tb-thumb">
+                <img src={{ vol.Image.url }} alt="" class="img-fluid">
+              </div>
+              <div class="tb-content">
+                <h3 class="tb-name">Janne <span class="tb-role">{{ vol.Position }}</span></a>
+                </h3>
+                <div class="tb-desc">{{ vol.About }}</div>
+                <div class="tb-social">
+                  <ul>
+                    <li><a href="{{ vol.Facebook }}"><i class="icon-facebook-f"></i></a></li>
+                    <li><a href="{{ vol.Twitter }}"><i class="icon-twitter"></i></a></li>
+
+                    <li><a href="{{ vol.Instagram }}"><i class="icon-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}
